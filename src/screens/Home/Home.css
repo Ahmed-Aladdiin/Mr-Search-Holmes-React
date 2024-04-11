@@ -1,15 +1,6 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 25vmin;
-  pointer-events: none;
-  margin-top: -120px;
-
-  /* filter: grayscale(100%) brightness(0) invert(1); */
-}
-
+}  
 
 .App-header {
   background-color: black;
@@ -17,20 +8,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.App-logo {
+  height: 25vmin;
+  pointer-events: none;
+  margin-top: -180px;
+}  
+
+#wordmark {
+  font-family: "Dancing Script";
+  font-size: 6vw;
+  margin-top: 0px;
+}  
+
+#Input-Post-Text {
+  font-size: 15px;
+  line-height: 26px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#Input-Post-Text .Link {
+  text-decoration: none;
+  color: burlywood;
+  font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  #wordmark{
+    font-size: 42px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+#Theme-Switch {
+  position: fixed;
+  top: 3vh;
+  right: 3vw;
+  width: 30px;
+  aspect-ratio: 1/1;
+}
+
+#Theme-Switch img {
+  width: 100%;
 }
