@@ -1,4 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Satisfy&display=swap');
+
+:root {
+  --text-color: white;
+  --background-color: black;
+  --input-background: #101010;
+  --box-shadow-color: rgba(255, 255, 255, 0.171);
+  --invert: 0;
+}
+
+[data-theme="light"] {
+  --text-color: black;
+  --background-color: white;
+  --input-background: #f0f0f0;
+  --box-shadow-color: rgba(0, 0, 0, 0.171);
+  --invert: 1;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
 
 body {
   margin: 0;
