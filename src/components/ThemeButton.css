@@ -1,0 +1,11 @@
+#Theme-Switch {
+  position: fixed;
+  top: 3vh;
+  right: 3vw;
+  width: 30px;
+  aspect-ratio: 1/1;
+}
+
+#Theme-Switch img {
+  width: 100%;
+}
