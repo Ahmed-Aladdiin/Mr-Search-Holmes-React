@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 import Logo from "../../components/Logo";
-import Input from "./sub/Input";
+import Input from "../../components/Input";
 
-import "./Home.css";
 import ThemeButton from "components/ThemeButton";
+import "./Home.css";
 
 function App() {
   const SherlockLocation = "https://maps.app.goo.gl/ceR9pVoZEzKFwtLD7";
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div></div>
-        <div>
+        <div id="Logo-and-Input-Home">
           <Logo/>
           <Input />
         </div>

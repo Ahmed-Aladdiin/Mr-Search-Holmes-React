@@ -3,7 +3,6 @@
 }  
 
 .App-header {
-  background-color: var(--background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,12 +12,9 @@
   color: var(--text-color);
 }
 
-
-.App-logo {
-  height: 25vmin;
-  pointer-events: none;
+#Logo-and-Input-Home {
   margin-top: -180px;
-}  
+}
 
 #wordmark {
   font-family: "Dancing Script";
