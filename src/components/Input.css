@@ -30,6 +30,14 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+#Query-Input:-webkit-autofill,
+#Query-Input:-webkit-autofill:hover, 
+#Query-Input:-webkit-autofill:focus, 
+#Query-Input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--input-background) inset !important;
+    -webkit-text-fill-color: var(--text-color);
+}
+
 #Send-Button-Container {
   --button-size: 42px;
   width: var(--button-size);
