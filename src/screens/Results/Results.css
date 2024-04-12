@@ -1,0 +1,13 @@
+#Logo-and-Input {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4vmin;
+  margin: 1vh 0 4vh 4vw;
+}
+
+#Horizontal-Line {
+  background-color: burlywood;
+  width: 100vw;
+  height: 2px;
+}
