@@ -22,9 +22,7 @@ function App() {
           <Input />
         </div>
         <p id="Input-Post-Text">
-          Send me your query, and surely the truth will be unveiled, or you{" "}
-          <br />
-          may pay me a visit at{" "}
+          Send me your query, and surely the truth will be unveiled, or you may pay me a visit at{" "}
           <Link to="https://maps.app.goo.gl/ceR9pVoZEzKFwtLD7" className="Link">
             221B Baker Street
           </Link>
