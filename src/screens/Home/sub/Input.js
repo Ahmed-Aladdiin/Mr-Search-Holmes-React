@@ -6,7 +6,7 @@ function Input() {
     <div id="Input-Field-Container">
       <input type="text" placeholder="Enter your Query" id="Query-Input" />
       <div id="Send-Button-Container">
-        <img src={send} id="Send-Button"></img>
+        <img src={send} id="Send-Button" alt="The query sending button"></img>
       </div>
     </div>
   );

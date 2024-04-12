@@ -4,9 +4,11 @@ import ThemeContext from "ThemeContext";
 
 import Moon from "imgs/moon.png";
 import Sun from "imgs/sun.png";
-import Logo from "./Logo";
+
+import Logo from "./sub/Logo";
+import Input from "./sub/Input";
+
 import "./Home.css";
-import Input from "./Input";
 
 function App() {
   const { isDark, setDark, setLight } = useContext(ThemeContext);
@@ -28,7 +30,7 @@ function App() {
           </Link>
         </p>
         <div id="Theme-Switch" onClick={isDark ? setLight : setDark}>
-          <img src={isDark ? Sun : Moon} />
+          <img src={isDark ? Sun : Moon} alt="theme switching icon"/>
         </div>
       </header>
     </div>

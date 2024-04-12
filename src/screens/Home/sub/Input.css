@@ -47,4 +47,5 @@
   width: 80%;
   fill: white;
   filter: invert(var(--invert));
+  cursor: pointer;
 }
