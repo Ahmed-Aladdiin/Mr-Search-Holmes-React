@@ -3,6 +3,7 @@
 
 :root {
   --text-color: white;
+  --secondary-text-color: rgb(219, 219, 219);
   --background-color: black;
   --input-background: #101010;
   --box-shadow-color: rgba(255, 255, 255, 0.171);
@@ -11,6 +12,7 @@
 
 [data-theme="light"] {
   --text-color: black;
+  --secondary-text-color: rgb(37, 37, 37);
   --background-color: white;
   --input-background: #f0f0f0;
   --box-shadow-color: rgba(0, 0, 0, 0.171);

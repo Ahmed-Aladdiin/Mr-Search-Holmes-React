@@ -1,9 +1,29 @@
+.Gap-Container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.Gap {
+  width: 4vw;
+}
+
 #Logo-and-Input {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 4vmin;
-  margin: 1vh 0 4vh 4vw;
+  margin: 1vh 0 4vh 0;
+}
+
+@media (max-width: 810px) {
+  #Logo-and-Input {
+    /* Add your small screen styles here */
+    flex-direction: column;
+    align-items: start;
+    gap: 3vmin;
+    margin: 0.5vh 0 2vh 0;
+  }
 }
 
 #Horizontal-Line {
