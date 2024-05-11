@@ -1,6 +1,7 @@
 #Theme-Switch {
   position: fixed;
   top: 4vh;
+  z-index: 9999;
   right: 2vw;
   width: 30px;
   aspect-ratio: 1/1;
