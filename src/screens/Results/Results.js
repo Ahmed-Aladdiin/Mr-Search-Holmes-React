@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Input from "components/Input";
 import Logo from "components/Logo";
@@ -10,9 +10,9 @@ import "./Results.css";
 import Pagination from "components/pagination";
 
 function Results() {
-  // const location = useLocation();
-  // const queryParams = new URLSearchParams(location.search);
-  // const query = queryParams.get("query");
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const query = queryParams.get("query");
   const [results, setResults] = useState([]);
   const baseURL = process.env.REACT_APP_BASE_URL;
   // pagination logic variables
@@ -26,14 +26,15 @@ function Results() {
   useEffect(() => {
     const currentTime = new Date().getTime();
     console.log("Results.js: useEffect() currentTime", currentTime);
-    fetch(`${baseURL}/results`, {
-      method: "GET",
-      // headers: {
-      //   "Content-Type": "application/json"
-      // },
-      // body: JSON.stringify({query: query})
+    fetch(`${baseURL}/api/v1/query`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+      body: query,
     })
       .then((response) => {
+        console.log("Results.js: useEffect() response", response);
         if (!response.ok) {
           setResults([]);
           throw new Error("Network response was not ok");
@@ -41,6 +42,7 @@ function Results() {
         return response.json();
       })
       .then((data) => {
+        console.log("Results.js: useEffect() data", data);
         setResults(data);
         setPageResults(data.slice(0, resultsPerPage));
         setTotalPages(Math.ceil(data.length / resultsPerPage));
@@ -53,7 +55,7 @@ function Results() {
       .catch((e) => {
         console.error("Can't reach server");
       });
-  }, []);
+  }, [query]);
 
   useEffect(() => {
     const lastResultIndex = currentPage * resultsPerPage;
