@@ -14,6 +14,11 @@ function Results() {
   // const query = queryParams.get("query");
   const [results, setResults] = useState([]);
   const baseURL = process.env.REACT_APP_BASE_URL;
+  // pagination logic variables
+  const [currentPage, setCurrentPage] = useState(1);
+  const resultsPerPage = 10;
+  const [pageResults, setPageResults] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
   useEffect(() => {
     fetch(`${baseURL}/results`, {
       method: "GET",
@@ -35,6 +40,12 @@ function Results() {
       });
   }, []);
 
+  useEffect(() => {
+    const lastResultIndex = currentPage * resultsPerPage;
+    const firstResultIndex = lastResultIndex - resultsPerPage;
+    setPageResults(results.slice(firstResultIndex, lastResultIndex));
+  }, [currentPage]);
+
   return (
     <>
       <ThemeButton />
@@ -46,7 +57,11 @@ function Results() {
         </div>
       </div>
       <div id="Horizontal-Line" />
-      <ResultsList results={results} />
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPages={totalPages}
+      />
     </>
   );
 }
