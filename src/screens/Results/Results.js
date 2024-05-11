@@ -7,6 +7,7 @@ import ThemeButton from "components/ThemeButton";
 import ResultsList from "./sub/ResultsList";
 
 import "./Results.css";
+import Pagination from "components/pagination";
 
 function Results() {
   // const location = useLocation();
@@ -19,7 +20,12 @@ function Results() {
   const resultsPerPage = 10;
   const [pageResults, setPageResults] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
+  // stop watch logic variable
+  const [stopWatch, setStopWatch] = useState(0);
+
   useEffect(() => {
+    const currentTime = new Date().getTime();
+    console.log("Results.js: useEffect() currentTime", currentTime);
     fetch(`${baseURL}/results`, {
       method: "GET",
       // headers: {
@@ -30,11 +36,20 @@ function Results() {
       .then((response) => {
         if (!response.ok) {
           setResults([]);
-          throw new Error('Network response was not ok');
-        };
+          throw new Error("Network response was not ok");
+        }
         return response.json();
       })
-      .then((data) => setResults(data))
+      .then((data) => {
+        setResults(data);
+        setPageResults(data.slice(0, resultsPerPage));
+        setTotalPages(Math.ceil(data.length / resultsPerPage));
+        const newTime = new Date().getTime();
+        const timeDiff = newTime - currentTime;
+        const seconds = timeDiff / 1000;
+        setStopWatch(seconds);
+        console.log("Results.js: useEffect() timeDiff", timeDiff);
+      })
       .catch((e) => {
         console.error("Can't reach server");
       });
@@ -49,14 +64,22 @@ function Results() {
   return (
     <>
       <ThemeButton />
-      <div className="Gap-Container">
-        <div className="Gap" />
-        <div id="Logo-and-Input">
-          <Logo showText={false} size={10} />
-          <Input />
+      <div id="Gap-Container-Top">
+        <div className="Gap-Container">
+          <div className="Gap" />
+          <div id="Logo-and-Input">
+            <Logo showText={false} size={10} />
+            <Input />
+          </div>
+        </div>
+        <div id="Horizontal-line-container">
+          <div id="Horizontal-Line" />
         </div>
       </div>
-      <div id="Horizontal-Line" />
+      <p id="Results-Count">
+        {results.length} results in {stopWatch}s
+      </p>
+      <ResultsList results={pageResults} />
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
