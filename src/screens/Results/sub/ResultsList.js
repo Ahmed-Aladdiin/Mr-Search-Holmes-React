@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./ListItem.css";
 function ResultsList({ results = [] }) {
   return (
@@ -18,7 +17,7 @@ function ResultsList({ results = [] }) {
 function Result({ result }) {
   return (
     <div className="ListItem">
-      <Link to={result.url} className="Result-Link"><h2>{result.title}</h2></Link>
+      <a href={result.url} target="_blank" rel="noopener noreferrer" className="Result-Link"><h2>{result.title}</h2></a>
       <p className="url">{result.url}</p>
       <p className="paragraph">{result.snippet}</p>
     </div>
