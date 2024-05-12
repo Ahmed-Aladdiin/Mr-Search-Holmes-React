@@ -20,7 +20,7 @@ function Result({ result }) {
     <div className="ListItem">
       <Link to={result.url} className="Result-Link"><h2>{result.title}</h2></Link>
       <p className="url">{result.url}</p>
-      <p className="paragraph">{result.paragraph}</p>
+      <p className="paragraph">{result.snippet}</p>
     </div>
   );
 }
