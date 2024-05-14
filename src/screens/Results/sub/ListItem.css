@@ -22,6 +22,11 @@
   line-height: 22px;
 }
 
+.ListItem strong {
+  color: rgb(253, 224, 188);
+  font-size: 1.2em;
+}
+
 .ListItem .url {
   color: rgb(133, 133, 133);
 }

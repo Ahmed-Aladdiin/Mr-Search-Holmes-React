@@ -81,7 +81,7 @@ function Results() {
       <p id="Results-Count">
         {results.length} results in {stopWatch}s
       </p>
-      <ResultsList results={pageResults} />
+      <ResultsList results={pageResults} query={query} />
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
